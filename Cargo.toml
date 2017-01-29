@@ -1,0 +1,18 @@
+[package]
+name = "noritama"
+version = "0.1.0"
+authors = ["watawuwu <watawuwu@gmail.com>"]
+
+[dependencies]
+lazy_static = "0.2"
+time = "*"
+byteorder = "1.0"
+rustc-serialize = "0.3"
+regex = "0.2"
+clap = "2"
+log = "0.3"
+env_logger = "*"
+
+[dev-dependencies]
+quickcheck = "0.4"
+quickcheck_macros = "0.4"
