@@ -1,7 +1,15 @@
-box: debian
+box: watawuwu/test
 build:
   steps:
     - script:
         name: test
         code: |
-          ls -al
+          make test
+    - script:
+        name: bench
+        code: |
+          make bench
+    - script:
+        name: build
+        code: |
+          make wercker-buil
