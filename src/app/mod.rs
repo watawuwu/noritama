@@ -3,8 +3,8 @@ extern crate env_logger;
 pub mod arg;
 pub mod error;
 
-use noritama::flaker::{Flakerable, Flaker};
-use noritama::flake::Flakable;
+use flaker::{Flakerable, Flaker};
+use flake::Flakable;
 use app::error::*;
 use app::arg::Arg;
 

@@ -7,9 +7,9 @@ use rustc_serialize::hex::FromHex;
 use time::Tm;
 
 use machine;
-use noritama::flake;
-use noritama::flake::Flake;
-use noritama::error::Error;
+use flake;
+use flake::Flake;
+use error::Error;
 
 pub trait Flakerable {
     // @see 2016-03-14
@@ -260,9 +260,9 @@ mod tests {
 
     use time;
 
-    use noritama::flake;
-    use noritama::flake::{Flakable, Flake};
-    use noritama::flaker::{Flakerable, Flaker};
+    use flake;
+    use flake::{Flakable, Flake};
+    use flaker::{Flakerable, Flaker};
     use util::time as utime;
 
     fn flaker() -> Flaker {
@@ -434,6 +434,15 @@ mod tests {
         let a4 = Flaker::new_with_epoch_timestamp(start_epoch,
                                                   Some(over_maximum_timestamp_correction));
         assert!(a4.is_err());
-
     }
+
+/*
+    #[bench]
+    fn gen(b: &mut Bencher) {
+        let c: Flaker = flaker();
+        b.iter(|| {
+            c.id().unwrap()
+        });
+    }
+*/
 }

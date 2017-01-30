@@ -20,5 +20,8 @@ extern crate clap;
 
 pub mod app;
 pub mod machine;
-pub mod noritama;
 pub mod util;
+pub mod flaker;
+pub mod flake;
+pub mod error;
+

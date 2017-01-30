@@ -1,7 +1,7 @@
 use std::error;
 use std::fmt;
 use log::SetLoggerError;
-use noritama::error::Error as NoritamaError;
+use error::Error as NoritamaError;
 
 // @TODO Implement ErrorKind
 

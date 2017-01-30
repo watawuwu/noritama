@@ -70,8 +70,8 @@ impl Flakable for Flake {
 #[cfg(test)]
 mod tests {
 
-    use noritama::flake;
-    use noritama::flake::*;
+    use flake;
+    use flake::*;
     use regex::Regex;
 
     use rustc_serialize::hex::FromHex;
