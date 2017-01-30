@@ -1,67 +1,67 @@
 [package]
-name    = "noritama"
-version = "0.1.0"
-authors = ["watawuwu <watawuwu@gmail.com>"]
-exclude = ["examples/*", "tests/*", "benches/*", "*.png", "perf/*", "assets", "Makefile", "tmp.rs"]
-repository = "https://github.com/watawuwu/noritama.git"
+name          = "noritama"
+version       = "0.1.0"
+authors       = ["watawuwu <watawuwu@gmail.com>"]
+exclude       = ["examples/*", "tests/*", "benches/*", "*.png", "perf/*", "assets", "Makefile", "tmp.rs"]
+repository    = "https://github.com/watawuwu/noritama.git"
 #documentation = "https://docs.rs/noritama/"
-readme = "README.md"
-license = "MIT"
-keywords = ["command", "id", "k-ordered", "decentralized", "flake"]
-categories = ["command-line-interface"]
-description = """
+readme        = "README.md"
+license       = "MIT"
+keywords      = ["command", "id", "k-ordered", "decentralized", "flake"]
+categories    = ["command-line-utilities"]
+description   = """
 NoritamaFlake is a library that generates decentralized and K-ordered id, affected by SnowFlake and ObjectId(Mongo-id)
 """
 
 [dependencies]
-lazy_static = "0.2"
-time = "*"
-byteorder = "1.0"
+lazy_static     = "0.2"
+time            = "*"
+byteorder       = "1.0"
 rustc-serialize = "0.3"
-regex = "0.2"
-clap = "2"
-log = "0.3"
-env_logger = "*"
+regex           = "0.2"
+clap            = "2"
+log             = "0.3"
+env_logger      = "*"
 
 [dev-dependencies]
-quickcheck = "0.4"
+quickcheck        = "0.4"
 quickcheck_macros = "0.4"
 
 [profile.release]
-opt-level = 3
-debug = false
-rpath = false
-lto = true
+opt-level        = 3
+debug            = false
+rpath            = false
+lto              = true
 debug-assertions = false
 
 [profile.dev]
-opt-level = 0
-debug = true
-rpath = false
-lto = false
+opt-level        = 0
+debug            = true
+rpath            = false
+lto              = false
 debug-assertions = true
-codegen-units = 4
+codegen-units    = 4
 
 [profile.test]
-opt-level = 1
-debug = true
-rpath = false
-lto = false
+opt-level        = 1
+debug            = true
+rpath            = false
+lto              = false
 debug-assertions = true
-codegen-units = 2
+codegen-units    = 2
 
 [profile.bench]
-opt-level = 3
-debug = false
-rpath = false
-lto = true
+opt-level        = 3
+debug            = false
+rpath            = false
+lto              = true
 debug-assertions = false
 
 [profile.doc]
-opt-level = 0
-debug = true
-rpath = false
-lto = false
+opt-level        = 0
+debug            = true
+rpath            = false
+lto              = false
 debug-assertions = true
-codegen-units = 4
+codegen-units    = 4
 
