@@ -1,0 +1,15 @@
+box: ekidd/rust-musl-builder
+build:
+  steps:
+    - script:
+        name: test
+        code: |
+          make test
+    - script:
+        name: bench
+        code: |
+          make bench
+    - script:
+        name: build
+        code: |
+          make wercker-build
