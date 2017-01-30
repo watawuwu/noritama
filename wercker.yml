@@ -1,4 +1,4 @@
-box: ekidd/rust-musl-builder
+box: debian
 build:
   steps:
     - script:
