@@ -33,10 +33,10 @@ darwin-install:
 	cp -a target/$(DARWIN_TARGET)/release/$(BIN_NAME) bin/$(BIN_NAME)_Darwin_x86_64
 linux-build:
 	docker run \
-	  -v $(ROOT_DIR)/.cargo-cache:/home/rust/.cargo/registry \
-	  -v $(ROOT_DIR):/home/rust/src ekidd/rust-musl-builder \
-	  rustup default nightly; \
-	  cargo build $(OPTIONS) --release --target $(LINUX_TARGET)
+	  -v $(ROOT_DIR)/.cargo-cache:/root/.cargo/registry \
+	  -v $(ROOT_DIR):/root/src \
+	  watawuwu/rust:nightly \
+	    cargo build $(OPTIONS) --release --target $(LINUX_TARGET)
 linux-install:
 	cp -a target/$(LINUX_TARGET)/release/$(BIN_NAME) bin/$(BIN_NAME)_Linux_x86_64
 wercker-build:
