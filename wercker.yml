@@ -11,20 +11,25 @@ build:
           make wercker-build
     - script:
         name: copy binary
-        code: cp -a target/x86_64-unknown-linux-musl/release/noritama "$WERCKER_OUTPUT_DIR"
+        code: |
+          cp -a target/x86_64-unknown-linux-musl/release/noritama "$WERCKER_OUTPUT_DIR"
 
 deploy:
+  box:
+    id: alpine:3.5
+    cmd: /bin/sh
   steps:
-    - internal/docker-push:
-        username: $DOCKERHUB_USERNAME
+    - internal/docker-scratch-push:
+        disable-sync: true
+        u${RCKEWER_SOURCE_DIR}sername: watawuwu
         password: $DOCKERHUB_PASSWORD
         tag: 0.1.0,latest
-        entrypoint: noritama
+        entrypoint: /noritama
         repository: watawuwu/noritama
 
-bench:
-  steps:
-    - script:
-        name: code gen bench
-        code: |
-          make bench
+# bench:
+#   steps:
+#     - script:
+#         name: code gen bench
+#         code: |
+#           make bench
