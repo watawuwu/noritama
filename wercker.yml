@@ -13,4 +13,15 @@ build:
         name: build
         code: |
           make wercker-build
+    - script:
+        name: copy binary
+        code: cp -a target/x86_64-unknown-linux-musl/release/noritama "$WERCKER_OUTPUT_DIR"
+deploy:
+  steps:
+  - internal/docker-scratch-push:
+    username: $DOCKERHUB_USERNAME
+    password: $DOCKERHUB_PASSWORD
+    entrypoint: noritama
+    tag: 0.1.0,latest
+    repository: watawuwu/noritama
 
