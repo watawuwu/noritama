@@ -12,4 +12,4 @@ build:
     - script:
         name: build
         code: |
-          make wercker-buil
+          make wercker-build
