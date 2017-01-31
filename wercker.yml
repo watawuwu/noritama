@@ -1,4 +1,4 @@
-box: watawuwu/test
+box: watawuwu/rust:nightly
 build:
   steps:
     - script:
@@ -13,3 +13,4 @@ build:
         name: build
         code: |
           make wercker-build
+
