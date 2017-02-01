@@ -21,7 +21,7 @@ deploy:
   steps:
     - internal/docker-scratch-push:
         disable-sync: true
-        u${RCKEWER_SOURCE_DIR}sername: watawuwu
+        username: watawuwu
         password: $DOCKERHUB_PASSWORD
         tag: 0.1.0,latest
         entrypoint: /noritama

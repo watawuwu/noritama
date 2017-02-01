@@ -409,7 +409,7 @@ mod tests {
     fn start_epoch() {
         let tm = time::strptime("1983-03-14", "%Y-%m-%d").unwrap();
         let start_epoch = utime::timestamp_with(tm);
-        let time_adjustment = 10000;
+        let time_adjustment = 1000000;
         let now = utime::timestamp();
 
         // Minimum internal timestamp
