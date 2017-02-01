@@ -1,4 +1,4 @@
-box: ekidd/rust-musl-builder
+box: watawuwu/rust:nightly
 build:
   steps:
     - script:
@@ -6,10 +6,30 @@ build:
         code: |
           make test
     - script:
-        name: bench
-        code: |
-          make bench
-    - script:
         name: build
         code: |
           make wercker-build
+    - script:
+        name: copy binary
+        code: |
+          cp -a target/x86_64-unknown-linux-musl/release/noritama "$WERCKER_OUTPUT_DIR"
+
+deploy:
+  box:
+    id: alpine:3.5
+    cmd: /bin/sh
+  steps:
+    - internal/docker-scratch-push:
+        disable-sync: true
+        username: watawuwu
+        password: $DOCKERHUB_PASSWORD
+        tag: 0.1.0,latest
+        entrypoint: /noritama
+        repository: watawuwu/noritama
+
+# bench:
+#   steps:
+#     - script:
+#         name: code gen bench
+#         code: |
+#           make bench

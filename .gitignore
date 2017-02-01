@@ -42,3 +42,5 @@ Temporary Items
 .idea
 
 bin
+.wercker
+wercker.env

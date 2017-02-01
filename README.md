@@ -1,6 +1,11 @@
 # NoritamaFlake
+
 - NoritamaFlake is a library that generates decentralized and K-ordered id, affected by SnowFlake and ObjectId(Mongo-id)
 - Implemented in pure Rust
+
+[![wercker status](https://app.wercker.com/status/382077604451cce44310e6ee76b05c84/s/master "wercker status")](https://app.wercker.com/project/byKey/382077604451cce44310e6ee76b05c84)
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![Rust Version](https://img.shields.io/badge/rust-1.16.0--nightly-lightgrey.svg)
 
 <p align="center">
 <img src="noritamaflake.png" width="300px"/>

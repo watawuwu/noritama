@@ -390,6 +390,7 @@ mod tests {
     #[test]
     fn correction() {
         let timestamp_correction: i64 = 3600 * 24 * 365;
+        let time_adjustment: u64 = 10000;
         let c: Flaker = Flaker::new_with_epoch_timestamp(Flaker::DEFAULT_START_EPOC,
                                                          Some(timestamp_correction))
             .unwrap();
@@ -401,14 +402,14 @@ mod tests {
 
         assert!(id.start_epoch == Flaker::DEFAULT_START_EPOC);
         assert!(id.unix_timestamp() > utime::timestamp());
-        assert!(id.unix_timestamp() < utime::timestamp() + timestamp_correction as u64);
+        assert!(id.unix_timestamp() < utime::timestamp() + timestamp_correction as u64 + time_adjustment);
     }
 
     #[test]
     fn start_epoch() {
         let tm = time::strptime("1983-03-14", "%Y-%m-%d").unwrap();
         let start_epoch = utime::timestamp_with(tm);
-        let time_adjustment = 10000;
+        let time_adjustment = 1000000;
         let now = utime::timestamp();
 
         // Minimum internal timestamp
@@ -435,14 +436,4 @@ mod tests {
                                                   Some(over_maximum_timestamp_correction));
         assert!(a4.is_err());
     }
-
-/*
-    #[bench]
-    fn gen(b: &mut Bencher) {
-        let c: Flaker = flaker();
-        b.iter(|| {
-            c.id().unwrap()
-        });
-    }
-*/
 }
