@@ -4,11 +4,11 @@ version       = "0.1.0"
 authors       = ["watawuwu <watawuwu@gmail.com>"]
 exclude       = ["examples/*", "tests/*", "benches/*", "*.png", "perf/*", "assets", "Makefile", "tmp.rs"]
 repository    = "https://github.com/watawuwu/noritama.git"
-#documentation = "https://docs.rs/noritama/"
 readme        = "README.md"
 license       = "MIT"
-keywords      = ["command", "id", "k-ordered", "decentralized", "flake"]
+keywords      = ["command", "id", "k-ordered", "decentralized", "flake", "distributed", "snowflake"]
 categories    = ["command-line-utilities"]
+
 description   = """
 NoritamaFlake is a library that generates decentralized and K-ordered id, affected by SnowFlake and ObjectId(Mongo-id)
 """
@@ -65,3 +65,7 @@ lto              = false
 debug-assertions = true
 codegen-units    = 4
 
+
+[features]
+default = []
+nightly = []
